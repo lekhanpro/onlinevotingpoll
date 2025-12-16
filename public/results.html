@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results - Live Count</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="emblem">🗳️</div>
+                <div class="title-section">
+                    <h1>Election Commission</h1>
+                    <p class="subtitle">Live Results Dashboard</p>
+                </div>
+            </div>
+            <button class="btn btn-outline" onclick="window.location.href='/'">
+                <span>🏠</span> Back to Home
+            </button>
+        </header>
+
+        <!-- Results Section -->
+        <main class="results-container">
+            <div class="results-header">
+                <h2>📊 Live Election Results</h2>
+                <p class="last-updated">Last updated: <span id="lastUpdated">-</span></p>
+                <button class="btn btn-secondary btn-sm" onclick="loadResults()">
+                    <span>🔄</span> Refresh
+                </button>
+            </div>
+
+            <!-- Total Votes -->
+            <div class="total-votes-card">
+                <div class="total-votes-icon">🗳️</div>
+                <div class="total-votes-info">
+                    <span class="total-label">Total Votes Cast</span>
+                    <span class="total-count" id="totalVotes">0</span>
+                </div>
+            </div>
+
+            <!-- Results Chart -->
+            <div class="results-chart" id="resultsChart">
+                <!-- Results will be loaded here -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading results...</p>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="results-table-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Candidate</th>
+                            <th>Party</th>
+                            <th>Votes</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Table rows will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Election Commission - Online Voting System</p>
+            <p class="footer-note">All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Load results on page load
+        loadResults();
+
+        async function loadResults() {
+            try {
+                const response = await fetch('/api/results');
+                const data = await response.json();
+
+                if (data.success) {
+                    displayResults(data);
+                }
+            } catch (error) {
+                console.error('Error loading results:', error);
+            }
+        }
+
+        function displayResults(data) {
+            // Update total votes
+            document.getElementById('totalVotes').textContent = data.totalVotes;
+            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+
+            // Sort results by votes (descending)
+            const sortedResults = [...data.results].sort((a, b) => b.votes - a.votes);
+
+            // Update chart
+            const chartContainer = document.getElementById('resultsChart');
+            chartContainer.innerHTML = sortedResults.map((candidate, index) => `
+                <div class="result-bar-container">
+                    <div class="result-candidate">
+                        <span class="result-rank">#${index + 1}</span>
+                        <span class="result-symbol">${candidate.symbol}</span>
+                        <div class="result-info">
+                            <span class="result-name">${candidate.name}</span>
+                            <span class="result-party">${candidate.party}</span>
+                        </div>
+                    </div>
+                    <div class="result-bar-wrapper">
+                        <div class="result-bar" style="width: ${candidate.percentage}%">
+                            <span class="result-votes">${candidate.votes} votes</span>
+                        </div>
+                        <span class="result-percentage">${candidate.percentage}%</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update table
+            const tableBody = document.getElementById('resultsTableBody');
+            tableBody.innerHTML = sortedResults.map((candidate, index) => `
+                <tr class="${index === 0 ? 'leading' : ''}">
+                    <td><span class="rank-badge ${index === 0 ? 'gold' : index === 1 ? 'silver' : index === 2 ? 'bronze' : ''}">${index + 1}</span></td>
+                    <td>
+                        <div class="candidate-cell">
+                            <span class="symbol">${candidate.symbol}</span>
+                            <span>${candidate.name}</span>
+                        </div>
+                    </td>
+                    <td>${candidate.party}</td>
+                    <td><strong>${candidate.votes}</strong></td>
+                    <td>
+                        <div class="percentage-cell">
+                            <div class="mini-bar" style="width: ${candidate.percentage}%"></div>
+                            <span>${candidate.percentage}%</span>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // Auto-refresh every 10 seconds
+        setInterval(loadResults, 10000);
+    </script>
+</body>
+
+</html>

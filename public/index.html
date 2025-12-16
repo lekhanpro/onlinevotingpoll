@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="emblem">🗳️</div>
+                <div class="title-section">
+                    <h1>Election Commission</h1>
+                    <p class="subtitle">Online Voting Portal</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Login Card -->
+        <main class="login-container">
+            <div class="login-card">
+                <div class="card-header">
+                    <div class="icon-circle">
+                        <span class="login-icon">👤</span>
+                    </div>
+                    <h2>Voter Login</h2>
+                    <p>Enter your Voter ID to proceed</p>
+                </div>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="voterId">Voter ID</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🪪</span>
+                            <input 
+                                type="text" 
+                                id="voterId" 
+                                name="voterId" 
+                                placeholder="e.g., VOTER001"
+                                autocomplete="off"
+                                required
+                            >
+                        </div>
+                        <small class="hint">Your unique voter identification number</small>
+                    </div>
+
+                    <div id="errorMessage" class="error-message hidden">
+                        <span class="error-icon">⚠️</span>
+                        <span class="error-text"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="loginBtn">
+                        <span class="btn-text">Proceed to Vote</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </form>
+
+                <div class="card-footer">
+                    <p class="security-note">
+                        <span>🔒</span> Your vote is secure and confidential
+                    </p>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>📋 Instructions</h3>
+                    <ul>
+                        <li>Enter your valid Voter ID to login</li>
+                        <li>You can vote only once</li>
+                        <li>Your vote is secret and secure</li>
+                        <li>Make sure to confirm your selection</li>
+                    </ul>
+                </div>
+
+                <div class="info-card demo-info">
+                    <h3>🧪 Demo Voter IDs</h3>
+                    <p>For testing, use any of these:</p>
+                    <div class="demo-ids">
+                        <code>VOTER001</code>
+                        <code>VOTER002</code>
+                        <code>VOTER003</code>
+                        <code>VOTER004</code>
+                        <code>VOTER005</code>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Election Commission - Online Voting System</p>
+            <p class="footer-note">All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', handleLogin);
+    </script>
+</body>
+</html>

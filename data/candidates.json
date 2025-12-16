@@ -1,0 +1,32 @@
+{
+  "candidates": [
+    {
+      "id": 1,
+      "name": "A",
+      "party": "Progressive Party",
+      "symbol": "🍎",
+      "votes": 1
+    },
+    {
+      "id": 2,
+      "name": "B",
+      "party": "Reform Alliance",
+      "symbol": "🔦",
+      "votes": 1
+    },
+    {
+      "id": 3,
+      "name": "C",
+      "party": "Unity Front",
+      "symbol": "🚲",
+      "votes": 1
+    },
+    {
+      "id": 4,
+      "name": "D",
+      "party": "People's Voice",
+      "symbol": "✋",
+      "votes": 0
+    }
+  ]
+}

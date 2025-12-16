@@ -1,0 +1,43 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/**/*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
+        {
+            "src": "/ballot",
+            "dest": "/public/ballot.html"
+        },
+        {
+            "src": "/thankyou",
+            "dest": "/public/thankyou.html"
+        },
+        {
+            "src": "/results",
+            "dest": "/public/results.html"
+        },
+        {
+            "src": "/(.*\\.css)",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/(.*\\.js)",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/",
+            "dest": "/public/index.html"
+        }
+    ]
+}

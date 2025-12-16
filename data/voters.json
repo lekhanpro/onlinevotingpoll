@@ -1,0 +1,54 @@
+{
+  "voters": [
+    {
+      "voterId": "VOTER001",
+      "name": "Rahul Kumar",
+      "hasVoted": true
+    },
+    {
+      "voterId": "VOTER002",
+      "name": "Priya Sharma",
+      "hasVoted": true
+    },
+    {
+      "voterId": "VOTER003",
+      "name": "Amit Singh",
+      "hasVoted": false
+    },
+    {
+      "voterId": "VOTER004",
+      "name": "Sneha Patel",
+      "hasVoted": false
+    },
+    {
+      "voterId": "VOTER005",
+      "name": "Vijay Reddy",
+      "hasVoted": false
+    },
+    {
+      "voterId": "VOTER006",
+      "name": "Anita Desai",
+      "hasVoted": false
+    },
+    {
+      "voterId": "VOTER007",
+      "name": "Rajesh Gupta",
+      "hasVoted": false
+    },
+    {
+      "voterId": "VOTER008",
+      "name": "Meera Iyer",
+      "hasVoted": false
+    },
+    {
+      "voterId": "VOTER009",
+      "name": "Suresh Nair",
+      "hasVoted": true
+    },
+    {
+      "voterId": "VOTER010",
+      "name": "Kavita Joshi",
+      "hasVoted": false
+    }
+  ]
+}

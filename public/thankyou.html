@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Vote Recorded</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="emblem">🗳️</div>
+                <div class="title-section">
+                    <h1>Election Commission</h1>
+                    <p class="subtitle">Online Voting Portal</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Thank You Section -->
+        <main class="thankyou-container">
+            <div class="thankyou-card">
+                <div class="success-animation">
+                    <div class="checkmark-circle">
+                        <div class="checkmark"></div>
+                    </div>
+                </div>
+
+                <h2 class="thankyou-title">Thank You for Voting!</h2>
+
+                <p class="thankyou-message">
+                    Your vote has been successfully recorded and will be counted in the final tally.
+                </p>
+
+                <div class="vote-receipt">
+                    <div class="receipt-header">
+                        <span class="receipt-icon">🧾</span>
+                        <h3>Vote Receipt</h3>
+                    </div>
+                    <div class="receipt-body">
+                        <div class="receipt-row">
+                            <span class="receipt-label">Voter ID:</span>
+                            <span class="receipt-value" id="receiptVoterId">-</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="receipt-label">Voted For:</span>
+                            <span class="receipt-value" id="receiptCandidate">-</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="receipt-label">Timestamp:</span>
+                            <span class="receipt-value" id="receiptTime">-</span>
+                        </div>
+                        <div class="receipt-row">
+                            <span class="receipt-label">Status:</span>
+                            <span class="receipt-value status-success">✓ Confirmed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thankyou-actions">
+                    <p class="action-text">You may now close this window</p>
+                    <button class="btn btn-primary" onclick="goToResults()">
+                        <span>📊</span> View Live Results
+                    </button>
+                </div>
+            </div>
+
+            <!-- Democracy Message -->
+            <div class="democracy-section">
+                <div class="democracy-card">
+                    <span class="democracy-icon">🏛️</span>
+                    <h3>Your Vote Matters</h3>
+                    <p>Every vote is a step towards building a better democracy. Thank you for participating in the
+                        democratic process.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Election Commission - Online Voting System</p>
+            <p class="footer-note">All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Load receipt info
+        loadReceipt();
+
+        function loadReceipt() {
+            const voterId = sessionStorage.getItem('voterId');
+            const voterName = sessionStorage.getItem('voterName');
+            const votedCandidate = sessionStorage.getItem('votedCandidate');
+
+            document.getElementById('receiptVoterId').textContent = voterId || 'N/A';
+            document.getElementById('receiptCandidate').textContent = votedCandidate || 'N/A';
+            document.getElementById('receiptTime').textContent = new Date().toLocaleString();
+
+            // Clear session
+            sessionStorage.clear();
+        }
+
+        function goToResults() {
+            window.location.href = '/results';
+        }
+    </script>
+</body>
+
+</html>

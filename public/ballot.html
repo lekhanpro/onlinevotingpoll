@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System - Cast Your Vote</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="emblem">🗳️</div>
+                <div class="title-section">
+                    <h1>Election Commission</h1>
+                    <p class="subtitle">Electronic Voting Machine</p>
+                </div>
+            </div>
+            <div class="voter-info">
+                <span class="voter-badge">
+                    <span class="badge-icon">👤</span>
+                    <span id="voterName">Voter</span>
+                </span>
+                <button class="btn btn-outline btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <!-- EVM Machine -->
+        <main class="evm-container">
+            <div class="evm-machine">
+                <!-- EVM Header -->
+                <div class="evm-header">
+                    <div class="evm-title">
+                        <span class="evm-light"></span>
+                        <h2>BALLOT UNIT</h2>
+                        <span class="evm-light"></span>
+                    </div>
+                    <p class="evm-instruction">Press the button next to your preferred candidate</p>
+                </div>
+
+                <!-- Candidate List -->
+                <div class="candidates-list" id="candidatesList">
+                    <!-- Candidates will be loaded here -->
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Loading candidates...</p>
+                    </div>
+                </div>
+
+                <!-- EVM Footer -->
+                <div class="evm-footer">
+                    <div class="evm-status">
+                        <span class="status-light active"></span>
+                        <span>Ready to Vote</span>
+                    </div>
+                    <div class="evm-serial">Serial: EVM-2024-001</div>
+                </div>
+            </div>
+
+            <!-- Side Instructions -->
+            <div class="ballot-info">
+                <div class="info-card">
+                    <h3>📌 How to Vote</h3>
+                    <ol>
+                        <li>Review all candidates carefully</li>
+                        <li>Press the <strong>VOTE</strong> button next to your choice</li>
+                        <li>Confirm your selection in the popup</li>
+                        <li>Wait for the confirmation message</li>
+                    </ol>
+                </div>
+                <div class="info-card warning-card">
+                    <h3>⚠️ Important</h3>
+                    <p>Once submitted, your vote <strong>cannot be changed</strong>. Please choose carefully.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Confirmation Modal -->
+        <div class="modal-overlay hidden" id="confirmModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3>Confirm Your Vote</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="selected-candidate">
+                        <span class="candidate-symbol" id="modalSymbol">🍎</span>
+                        <div class="candidate-details">
+                            <h4 id="modalCandidateName">Candidate Name</h4>
+                            <p id="modalPartyName">Party Name</p>
+                        </div>
+                    </div>
+                    <p class="confirm-text">Are you sure you want to vote for this candidate?</p>
+                    <p class="warning-text">⚠️ This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button class="btn btn-success" onclick="confirmVote()">
+                        <span>✓</span> Confirm Vote
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Election Commission - Online Voting System</p>
+            <p class="footer-note">All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Check if voter is logged in
+        checkVoterSession();
+        // Load candidates
+        loadCandidates();
+    </script>
+</body>
+
+</html>
