@@ -12,7 +12,27 @@ const voters = [
     { voterId: "VOTER007", name: "Rajesh Gupta", hasVoted: false },
     { voterId: "VOTER008", name: "Meera Iyer", hasVoted: false },
     { voterId: "VOTER009", name: "Suresh Nair", hasVoted: false },
-    { voterId: "VOTER010", name: "Kavita Joshi", hasVoted: false }
+    { voterId: "VOTER010", name: "Kavita Joshi", hasVoted: false },
+    { voterId: "VOTER011", name: "Arjun Malhotra", hasVoted: false },
+    { voterId: "VOTER012", name: "Deepa Krishnan", hasVoted: false },
+    { voterId: "VOTER013", name: "Sanjay Mehta", hasVoted: false },
+    { voterId: "VOTER014", name: "Pooja Agarwal", hasVoted: false },
+    { voterId: "VOTER015", name: "Vikram Choudhary", hasVoted: false },
+    { voterId: "VOTER016", name: "Nisha Kapoor", hasVoted: false },
+    { voterId: "VOTER017", name: "Karan Saxena", hasVoted: false },
+    { voterId: "VOTER018", name: "Swati Bhatt", hasVoted: false },
+    { voterId: "VOTER019", name: "Prakash Yadav", hasVoted: false },
+    { voterId: "VOTER020", name: "Ritu Bansal", hasVoted: false },
+    { voterId: "VOTER021", name: "Nikhil Sharma", hasVoted: false },
+    { voterId: "VOTER022", name: "Anjali Mishra", hasVoted: false },
+    { voterId: "VOTER023", name: "Rohit Verma", hasVoted: false },
+    { voterId: "VOTER024", name: "Shreya Pandey", hasVoted: false },
+    { voterId: "VOTER025", name: "Aditya Jain", hasVoted: false },
+    { voterId: "VOTER026", name: "Divya Srivastava", hasVoted: false },
+    { voterId: "VOTER027", name: "Manish Dubey", hasVoted: false },
+    { voterId: "VOTER028", name: "Priyanka Thakur", hasVoted: false },
+    { voterId: "VOTER029", name: "Ashish Tripathi", hasVoted: false },
+    { voterId: "VOTER030", name: "Neha Goyal", hasVoted: false }
 ];
 
 const candidates = [
