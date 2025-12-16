@@ -3,22 +3,22 @@
 // This in-memory store will reset on each cold start
 
 const voters = [
-    { voterId: "VOTER001", name: "Rahul Kumar", hasVoted: true },
-    { voterId: "VOTER002", name: "Priya Sharma", hasVoted: true },
+    { voterId: "VOTER001", name: "Rahul Kumar", hasVoted: false },
+    { voterId: "VOTER002", name: "Priya Sharma", hasVoted: false },
     { voterId: "VOTER003", name: "Amit Singh", hasVoted: false },
     { voterId: "VOTER004", name: "Sneha Patel", hasVoted: false },
     { voterId: "VOTER005", name: "Vijay Reddy", hasVoted: false },
     { voterId: "VOTER006", name: "Anita Desai", hasVoted: false },
     { voterId: "VOTER007", name: "Rajesh Gupta", hasVoted: false },
     { voterId: "VOTER008", name: "Meera Iyer", hasVoted: false },
-    { voterId: "VOTER009", name: "Suresh Nair", hasVoted: true },
+    { voterId: "VOTER009", name: "Suresh Nair", hasVoted: false },
     { voterId: "VOTER010", name: "Kavita Joshi", hasVoted: false }
 ];
 
 const candidates = [
-    { id: 1, name: "Arun Verma", party: "Progressive Party", symbol: "🍎", votes: 1 },
-    { id: 2, name: "Sunita Rao", party: "Reform Alliance", symbol: "🔦", votes: 1 },
-    { id: 3, name: "Manish Tiwari", party: "Unity Front", symbol: "🚲", votes: 1 },
+    { id: 1, name: "Arun Verma", party: "Progressive Party", symbol: "🍎", votes: 0 },
+    { id: 2, name: "Sunita Rao", party: "Reform Alliance", symbol: "🔦", votes: 0 },
+    { id: 3, name: "Manish Tiwari", party: "Unity Front", symbol: "🚲", votes: 0 },
     { id: 4, name: "Lakshmi Menon", party: "People's Voice", symbol: "✋", votes: 0 }
 ];
 

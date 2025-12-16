@@ -3,12 +3,12 @@
     {
       "voterId": "VOTER001",
       "name": "Rahul Kumar",
-      "hasVoted": true
+      "hasVoted": false
     },
     {
       "voterId": "VOTER002",
       "name": "Priya Sharma",
-      "hasVoted": true
+      "hasVoted": false
     },
     {
       "voterId": "VOTER003",
@@ -43,7 +43,7 @@
     {
       "voterId": "VOTER009",
       "name": "Suresh Nair",
-      "hasVoted": true
+      "hasVoted": false
     },
     {
       "voterId": "VOTER010",
