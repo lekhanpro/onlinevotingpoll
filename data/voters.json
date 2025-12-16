@@ -13,7 +13,7 @@
     {
       "voterId": "VOTER003",
       "name": "Amit Singh",
-      "hasVoted": false
+      "hasVoted": true
     },
     {
       "voterId": "VOTER004",

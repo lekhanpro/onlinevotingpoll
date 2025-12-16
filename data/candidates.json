@@ -1,32 +1,32 @@
 {
-    "candidates": [
-        {
-            "id": 1,
-            "name": "Arun Verma",
-            "party": "Progressive Party",
-            "symbol": "🍎",
-            "votes": 0
-        },
-        {
-            "id": 2,
-            "name": "Sunita Rao",
-            "party": "Reform Alliance",
-            "symbol": "🔦",
-            "votes": 0
-        },
-        {
-            "id": 3,
-            "name": "Manish Tiwari",
-            "party": "Unity Front",
-            "symbol": "🚲",
-            "votes": 0
-        },
-        {
-            "id": 4,
-            "name": "Lakshmi Menon",
-            "party": "People's Voice",
-            "symbol": "✋",
-            "votes": 0
-        }
-    ]
+  "candidates": [
+    {
+      "id": 1,
+      "name": "Arun Verma",
+      "party": "Progressive Party",
+      "symbol": "🍎",
+      "votes": 0
+    },
+    {
+      "id": 2,
+      "name": "Sunita Rao",
+      "party": "Reform Alliance",
+      "symbol": "🔦",
+      "votes": 1
+    },
+    {
+      "id": 3,
+      "name": "Manish Tiwari",
+      "party": "Unity Front",
+      "symbol": "🚲",
+      "votes": 0
+    },
+    {
+      "id": 4,
+      "name": "Lakshmi Menon",
+      "party": "People's Voice",
+      "symbol": "✋",
+      "votes": 0
+    }
+  ]
 }
